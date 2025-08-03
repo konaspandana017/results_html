@@ -4,57 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faculty Profile</title>
+    <link rel="stylesheet" href="faculty.css">
 </head>
 <body>
-    <center>
-        <h1>Faculty Profile</h1>
-        <table>
+
+    <h1 style="color: rgb(9, 8, 40); background-color: #7A7A73; text-align: center;">
+        Faculty Profile
+    </h1>
+
+    <div class="faculty-card">
+        <table align="center">
             <tr>
                 <td>
- <left> 
-                    <img src="../Public_media/faculty .png" alt="Faculty Picture" width="150" height="150">
-                </left>
+                    <h4 class="faculty-heading"><center>Welcome</center></h4>
                 </td>
-                <td>
-                    <right> 
-                        This is Faculty dashboard.<br>You can access your courses, view results and manage student results.
-                    </right>
-                </td>
-               
             </tr>
-             <tr>
-            <td>
-                <left>
-                    <ul>
+            <tr>
+                <td>
+                    <img src="../faculty .png" alt="Faculty" class="faculty-img">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    You can manage student results and view courses here.
+                    <br>
+                    Stay updated and keep your dashboard organized efficiently.
+                    <br>
+                    You can manage student results and view courses here.
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul class="list-style">
                         <li>My Courses</li>
-                        <li>Student Lists</li>
+                        <li>Student List</li>
                         <li>Update Results</li>
                     </ul>
-                </left>
-            </td>
-        </tr>
+                </td>
+            </tr>
         </table>
-       
-        <hr>
-        <h2>
-            Faculty Details
-        </h2>
-        <table border="1">              
-            <tr>
-                <td><b>Name</b></td>
-                <td>Jhon</td>
-            </tr>
-            <tr>
-                <td><b>Mail</b></td>
-                <td>John@university.in</td>
-            </tr>
-            <tr>
-                <td><b>Department</b></td>
-                <td>Cse</td>
-            </tr>
 
+        <hr>
+
+        <center><h4>Faculty Details</h4></center>
+
+        <table border="2" align="center">
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><strong>John</strong></td>
+            </tr>
+            <tr>
+                <td><em>Email</em></td>
+                <td><u>johnj@univ.edu</u></td>
+            </tr>
+            <tr>
+                <td><em>Department</em></td>
+                <td><u>Computer Science Engineering</u></td>
+            </tr>
         </table>
-    </center>
-    
+    </div>
+
 </body>
 </html>

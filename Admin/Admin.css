@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 40px;
+    background: linear-gradient(to right, #ECFAE5);
+}
+
+.admin-heading {
+    text-align: center;
+    align-items: center;
+    font-size: 20px;
+    color: #2C3E50;
+}
+
+.admin-img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    height: 150px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    box-shadow: 0px 12px 18px rgba(0, 0, 15, 0.3);
+}
+
+.admin-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+    border: 3px solid rgb(42, 7, 5);
+    border-radius: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    box-shadow: 0px 12px 18px rgba(0, 0, 15, 0.3);
+    background-color: #FFFDF6;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-card:hover {
+    border: 2px solid #521C0D;
+    background: radial-gradient(#DDEB9D, #f7f3f4);
+    transform: scale(1.05);
+    box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+.list-style {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+.list-style li {
+    background: linear-gradient(to right, #fcfbff, #ffffff);
+    color: #0a0a0a;
+    padding: 10px 12px 10px 40px;
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.7); /* black shadow under each option */
+    position: relative;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.list-style li::before {
+    content: '✓';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 20px;
+    width: 20px;
+    background-color: #DDEB9D;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+.list-style li:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.2);
+}
