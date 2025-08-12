@@ -3,9 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Post Marks</title>
+    <link rel="stylesheet" href="postmarks.css">
 </head>
 <body>
-    
+
+<h1 class="heading">Post Student Marks</h1>
+
+<div class="form-box">
+    <div class="form-row">
+        <label>Course</label>
+        <select>
+            <option>Front End Development</option>
+            <option>DBMS</option>
+            <option>Open Source Engineering</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <label>Year</label>
+        <select>
+            <option>1st Year</option>
+            <option>2nd Year</option>
+            <option>3rd Year</option>
+            <option>4th Year</option>
+        </select>
+    </div>
+
+    <div class="form-row">
+        <label>Semester</label>
+        <select>
+            <option>Sem 1</option>
+            <option>Sem 2</option>
+        </select>
+    </div>
+</div>
+
+<div class="marks-table">
+    <div class="table-row header">
+        <div>Student Name</div>
+        <div>Student ID</div>
+        <div>Internal</div>
+        <div>External</div>
+        <div>Total</div>
+        <div>Grade</div>
+        <div>Status</div>
+        <div>Credits</div>
+    </div>
+
+    <div class="table-row">
+        <div>John Doe</div>
+        <div>240001</div>
+        <div><input type="number" value="25"></div>
+        <div><input type="number" value="50"></div>
+        <div>75</div>
+        <div>A</div>
+        <div>Pass</div>
+        <div>3</div>
+    </div>
+
+    <div class="table-row">
+        <div>Jane Smith</div>
+        <div>240002</div>
+        <div><input type="number" value="22"></div>
+        <div><input type="number" value="55"></div>
+        <div>77</div>
+        <div>A+</div>
+        <div>Pass</div>
+        <div>3</div>
+    </div>
+</div>
+
+<div class="submit-btn">
+    <button>Submit Marks</button>
+</div>
+<div class="Viewresults-btn">
+    <a href="http://127.0.0.1:5500/Faculty/view_results.html">
+         <button>View Results</button>
+    </a>
+   
+</div>
+
 </body>
 </html>

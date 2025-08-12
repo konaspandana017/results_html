@@ -1,78 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Results - Insert/View</title>
+  <link rel="stylesheet" href="results.css" />
 </head>
 <body>
-    <h1><b>Faculty Result DASHBOARD</b></h1>
-    <br><br>
-    Your Courses
-    <tr>
-        <td>
-            <ul>
-                <li>Front End Development</li>
-                <li>DBMS</li>
-                <li>Open Source Engineering</li>
-            </ul>
-        </td>
-    </tr>
-    <br><br><br>
-    <tr>
-        <td><b>Post/View Results -</b></td>
-        <td>
-            <label for="Courses"></label>
-            <select name="Courses" id="courses">
-                 <option value="Front End Development">Front End Development</option>
-            <option value="DBMS">DBMS</option>
-            <option value="Open Source Engineering">Open Source Engineering</option>
+  <h1 class="page-title">Results</h1>
+
+  <div class="tabs">
+    <button class="tab-button active" data-tab="insert">Insert Results</button>
+    <button class="tab-button" data-tab="view">View Results</button>
+  </div>
+
+  <section id="insert" class="tab-content active">
+    <form class="insert-form">
+      <div class="form-group">
+        <label for="course">Course*</label>
+        <select id="course" name="course" required>
+          <option value="">Select Course</option>
+          <option value="CSE101">CSE101 - Intro to Programming</option>
+          <option value="CSE205">CSE205 - Data Structures</option>
+          <option value="CSE309">CSE309 - AI & ML</option>
         </select>
-        </td>
-    </tr>
-    <br><br>
-    <table border="1">
+      </div>
+
+      <div class="form-group">
+        <label for="student">Student*</label>
+        <select id="student" name="student" required>
+          <option value="">Select Student</option>
+          <option value="S123">Alice Johnson</option>
+          <option value="S124">Bob Smith</option>
+          <option value="S125">Charlie Davis</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="internal">Internal Marks</label>
+        <input type="number" id="internal" name="internal" min="0" max="50" />
+      </div>
+
+      <div class="form-group">
+        <label for="external">External Marks</label>
+        <input type="number" id="external" name="external" min="0" max="50" />
+      </div>
+
+      <div class="form-group full-width">
+        <label for="remarks">Remarks</label>
+        <textarea id="remarks" name="remarks" rows="3" placeholder="Enter remarks"></textarea>
+      </div>
+
+      <button type="submit" class="btn submit-btn">Submit</button>
+    </form>
+  </section>
+
+  <section id="view" class="tab-content">
+    <table class="results-table">
+      <thead>
         <tr>
-            <td><b>Student Name</b></td>
-            <td><b>Student Id</b></td>
-            <td><b>Marks</b></td>
-            <td><b>Grade</b></td>
-            <td><b>Status</b></td>
-            <td><b>Credits</b></td>
+          <th>ResultID</th>
+          <th>Student</th>
+          <th>Course</th>
+          <th>Internal</th>
+          <th>External</th>
+          <th>Total</th>
+          <th>Grade</th>
+          <th>AY</th>
+          <th>Semester</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>R001</td>
+          <td>Alice Johnson</td>
+          <td>CSE101</td>
+          <td>40</td>
+          <td>45</td>
+          <td>85</td>
+          <td>A</td>
+          <td>2023-24</td>
+          <td>Odd</td>
         </tr>
         <tr>
-            <td>John Doe</td>
-            <td>3139</td>
-            <td>85</td>
-            <td>A</td>
-            <td>P</td>
-            <td>3</td>
+          <td>R002</td>
+          <td>Bob Smith</td>
+          <td>CSE205</td>
+          <td>35</td>
+          <td>40</td>
+          <td>75</td>
+          <td>B</td>
+          <td>2023-24</td>
+          <td>Even</td>
         </tr>
-        <tr>
-            <td>Jane Smith</td>
-            <td>3299</td>
-            <td>78</td>
-            <td>B</td>
-            <td>P</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>Emily Johnson</td>
-            <td>3291</td>
-            <td>92</td>
-            <td>o</td>
-            <td>P</td>
-            <td>3</td>
-        </tr>
-        <tr>
-            <td>Michael Brown</td>
-            <td>3300</td>
-            <td>65</td>
-            <td>C</td>
-            <td>P</td>
-            <td>3</td>
-        </tr>
+      </tbody>
     </table>
-    
+  </section>
+
+  <script>
+    // Tab switching without extra JS libraries
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(tc => tc.classList.remove('active'));
+
+        button.classList.add('active');
+        document.getElementById(button.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>

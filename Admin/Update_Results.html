@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Results</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Update Results</title>
+  <link rel="stylesheet" href="updateresults.css" />
 </head>
 <body>
-    
+
+  <h1>Update Results</h1>
+
+  <form class="update-form">
+    <div class="form-row">
+      <label for="regno">Select Reg No.:</label>
+      <select id="regno" name="regno">
+        <option value="3139">3139</option>
+        <option value="3299">3299</option>
+        <option value="3291">3291</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="course">Select Course:</label>
+      <select id="course" name="course">
+        <option value="Front End Development">Front End Development</option>
+        <option value="Oops">Oops</option>
+        <option value="AI&ML">AI&ML</option>
+        <option value="OS">OS</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="marks">Enter New Marks:</label>
+      <input type="text" id="marks" name="marks" />
+    </div>
+
+    <div class="form-row">
+      <button type="submit">Update</button>
+    </div>
+  </form>
+
 </body>
 </html>
-    <h1><b>Update Results</b></h1>
-    <br><br><br>
-    <tr>
-        <td>
-            <label for="Select Regno.">Select Regno.</label>
-            <select id="Regno." name="Regno.">
-                <option value="3139">3139</option>
-                <option value="3299">3299</option>
-                <option value="3291">3291</option>
-            </select>
-        </td>
-        &emsp;&emsp;
-        <td>
-            <label for="course"><b>Select Course:</b></label>
-            <select id="course" name="course">
-                <option value="Front End Development">Front End Development</option>
-                <option value="Oops">Oops</option>
-                <option value="AI&ML">AI&ML</option>
-                <option value="OS">OS</option>
-            </select>
-        </td>
-    </tr>
-    <br><br><br><br>
-    <label for="Marks"><b>Enter New Marks:</b></label>
-    <input type="text" id="Marks" name="Marks">
-    <br><br><br><br>
-    <button type="submit" style="position: relative; left: 20px;">Update</button>

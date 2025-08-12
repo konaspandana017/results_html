@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Results Page</title>
+  <link rel="stylesheet" href="postann.css">
+</head>
+<body>
+
+  <header>
+    <h1>Post Announcements</h1>
+  </header>
+
+  <section class="announcement-section">
+    <h2>Announcements</h2>
+    <div class="announcement">🗓️ Result rechecking deadline is 20th August 2025.</div>
+    <div class="announcement">📢 Supplementary exam dates will be released next week.</div>
+    <div class="announcement">🎓 Convocation will be held on 30th September 2025.</div>
+  </section>
+
+  
+  <section class="results-content">
+    <h2>Student Results</h2>
+    <p><strong>Student Name:</strong> John Doe</p>
+    <p><strong>Roll Number:</strong> 123456</p>
+    <p><strong>Marks:</strong> 85%</p>
+  </section>
+
+</body>
+</html>

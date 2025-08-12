@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Result</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Result</title>
+  <link rel="stylesheet" href="addresults.css" />
 </head>
 <body>
-    <h1><b>Add Results</b></h1>
-    <br><br><br>
-    <tr>
-        <td>
- <label for="Academic year"><b>Select Academic Year:</b></label>
-    <select name="year" id="year">
+
+  <h1>Add Results</h1>
+
+  <form class="result-form">
+    <div class="form-row">
+      <label for="year">Select Academic Year:</label>
+      <select name="year" id="year">
         <option value="2025-26">2025-26</option>
         <option value="2024-25">2024-25</option>
         <option value="2023-24">2023-24</option>
@@ -19,44 +21,45 @@
         <option value="2021-22">2021-22</option>
         <option value="2020-21">2020-21</option>
         <option value="2019-20">2019-20</option>
-    </select>
-        </td>
-        &emsp;&emsp;&emsp;
-        <td>
-            <label for="Semister"><b>Select Semister</b></label>
-            <select name="Semister" id="semister">
-                <option value="Odd">odd</option>
-                <option value="Even">even</option>
-            </select>
-        </td>
-    </tr>
-    <br><br><br>
-   
-    <br><br><br>
-    <tr>
-        <td>
-  <label for="Select Regno.">Select Regno.</label>
-    <select id="Regno." name="Regno.">
-          <option value="3139">3139</option>
-    <option value="3299">3299</option>
-    <option value="3291">3291</option>
-    </select>
-        </td>
-        &emsp;&emsp;
-        <td>
-            <label for="course"><b>Select Course:</b></label>
-            <select id="course" name="course">
-                <option value="Front End Development">Front End Development</option>
-                <option value="Oops">Oops</option>
-                <option value="AI&ML">AI&ML</option>
-                <option value="OS">OS</option>
-            </select>
-        </td>
-    </tr>
-    <br><br><br><br>
-    <label for="Marks"><b>Enter Marks:</b></label>
-    <input type="text" id="Marks" name="Marks">
-    <br><br><br><br>
-  <button type="submit" style="position: relative; left: 20px;">Save</button>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="semester">Select Semester:</label>
+      <select name="semester" id="semester">
+        <option value="Odd">Odd</option>
+        <option value="Even">Even</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="regno">Select Reg No.:</label>
+      <select id="regno" name="regno">
+        <option value="3139">3139</option>
+        <option value="3299">3299</option>
+        <option value="3291">3291</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="course">Select Course:</label>
+      <select id="course" name="course">
+        <option value="Front End Development">Front End Development</option>
+        <option value="Oops">Oops</option>
+        <option value="AI&ML">AI&ML</option>
+        <option value="OS">OS</option>
+      </select>
+    </div>
+
+    <div class="form-row">
+      <label for="marks">Enter Marks:</label>
+      <input type="text" id="marks" name="marks" />
+    </div>
+
+    <div class="form-row">
+      <button type="submit">Save</button>
+    </div>
+  </form>
+
 </body>
 </html>

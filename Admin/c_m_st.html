@@ -1,12 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=!
-    , initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Course Mapped with Students</title>
+  <link rel="stylesheet" href="coursemapwithstudents.css" />
 </head>
 <body>
-    
+  <h1 class="page-title">Course Mapped with Students</h1>
+
+  <div class="student-card">
+    <form class="course-form">
+      <div class="form-group">
+        <label for="student-name">Student Name</label>
+        <select id="student-name" name="student-name">
+          <option value="">Select Student</option>
+          <option value="Alice">Alice</option>
+          <option value="Bob">Bob</option>
+          <option value="Charlie">Charlie</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="course-code">Course Code</label>
+        <input type="text" id="course-code" name="course-code" placeholder="Enter Course Code" />
+      </div>
+
+      <div class="form-group">
+        <label for="course-name">Course Name</label>
+        <input type="text" id="course-name" name="course-name" placeholder="Enter Course Name" />
+      </div>
+
+      <div class="form-group">
+        <label for="year">Year</label>
+        <select id="year" name="year">
+          <option value="">Select Year</option>
+          <option value="1">1st Year</option>
+          <option value="2">2nd Year</option>
+          <option value="3">3rd Year</option>
+          <option value="4">4th Year</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="semester">Semester</label>
+        <select id="semester" name="semester">
+          <option value="">Select Semester</option>
+          <option value="odd">Odd Semester</option>
+          <option value="even">Even Semester</option>
+        </select>
+      </div>
+
+      <div class="form-buttons">
+        <button type="submit" class="btn add-btn">Add</button>
+        <button type="reset" class="btn update-btn">Update</button>
+      </div>
+    </form>
+
+    <div class="course-grid">
+      <div class="grid-header">Course Code</div>
+      <div class="grid-header">Course Name</div>
+      <div class="grid-header">Year</div>
+      <div class="grid-header">Semester</div>
+      <div class="grid-header">Student Name</div>
+
+      <div class="grid-item">CSE101</div>
+      <div class="grid-item">Front End Development</div>
+      <div class="grid-item">2</div>
+      <div class="grid-item">Odd Semester</div>
+      <div class="grid-item">Alice</div>
+
+      <div class="grid-item">CSE205</div>
+      <div class="grid-item">DBMS</div>
+      <div class="grid-item">2</div>
+      <div class="grid-item">Even Semester</div>
+      <div class="grid-item">Bob</div>
+    </div>
+  </div>
 </body>
 </html>
