@@ -1,20 +1,20 @@
 body {
   margin: 0;
   padding: 40px;
-  background: linear-gradient(to right, #d96f6f, #f2b5b5);
+  background:  #EBD6FB;
   font-family: Arial, sans-serif;
 }
 
 .page-title {
   text-align: center;
-  color: #6b0b0b;
+  color: #2d2d2d;
   margin-bottom: 30px;
 }
 
 .delete-form {
   max-width: 450px;
   margin: 0 auto;
-  background: #fff0f0;
+  background: #A2AADB;
   padding: 25px 30px;
   border-radius: 15px;
   box-shadow: 0 8px 15px rgba(107, 11, 11, 0.3);
@@ -31,23 +31,23 @@ body {
 .form-group label {
   margin-bottom: 6px;
   font-weight: bold;
-  color: #6b0b0b;
+  color:  #2d2d2d;
 }
 
 .form-group select,
 .form-group input {
   padding: 10px;
   border-radius: 6px;
-  border: 1.5px solid #a44a4a;
+  border: 1.5px solid  #2196f3;
   font-size: 1rem;
-  outline-color: #d96f6f;
+  outline-color:  #2196f3;
 }
 
 .btn {
   padding: 12px;
   border: none;
   border-radius: 8px;
-  background-color: #b32d2d;
+  background-color:  #2196f3;
   color: white;
   font-weight: bold;
   font-size: 1.1rem;
@@ -56,5 +56,5 @@ body {
 }
 
 .btn:hover {
-  background-color: #7a1a1a;
+  background-color:  #1f6690;
 }

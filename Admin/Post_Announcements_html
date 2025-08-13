@@ -1,30 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Results Page</title>
-  <link rel="stylesheet" href="postann.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Announcement</title>
+    <link rel="stylesheet" href="postann.css">
 </head>
 <body>
 
-  <header>
-    <h1>Post Announcements</h1>
-  </header>
+    <div class="container">
+        <h1> Post New Announcement</h1>
+        <form>
+            <div class="form-group">
+                <label for="title">Announcement Title*</label>
+                <input type="text" id="title" name="title" placeholder="Enter title" required>
+            </div>
 
-  <section class="announcement-section">
-    <h2>Announcements</h2>
-    <div class="announcement">🗓️ Result rechecking deadline is 20th August 2025.</div>
-    <div class="announcement">📢 Supplementary exam dates will be released next week.</div>
-    <div class="announcement">🎓 Convocation will be held on 30th September 2025.</div>
-  </section>
+            <div class="form-group">
+                <label for="message">Message*</label>
+                <textarea id="message" name="message" rows="5" placeholder="Write your announcement..." required></textarea>
+            </div>
 
-  
-  <section class="results-content">
-    <h2>Student Results</h2>
-    <p><strong>Student Name:</strong> John Doe</p>
-    <p><strong>Roll Number:</strong> 123456</p>
-    <p><strong>Marks:</strong> 85%</p>
-  </section>
+            <div class="form-group">
+                <label for="audience">Target Audience*</label>
+                <select id="audience" name="audience" required>
+                    <option value="">-- Select Audience --</option>
+                    <option value="all">All Students</option>
+                    <option value="faculty">Faculty</option>
+                    <option value="batch">Specific Batch</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="date">Publish Date*</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+
+            <div class="form-group">
+                <label for="status">Status*</label>
+                <select id="status" name="status" required>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn-submit">Post Announcement</button>
+        </form>
+    </div>
 
 </body>
 </html>

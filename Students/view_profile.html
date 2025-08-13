@@ -1,78 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Profile</title>
-    <link rel="stylesheet" href="student.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Profile</title>
+  <link rel="stylesheet" href="student.css" />
 </head>
 <body>
 
-    <h1 style="color: rgb(226, 226, 226); background-color: grey; text-align: center;">
-        Student Profile
-    </h1>
+  <h1>Student Profile</h1>
 
-    <div class="student-card">
-        <table align="center">
-            <tr>
-                <td>
-                    <h4 class="student-heading" style="text-align: center;">Welcome</h4>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <img src="../Public_media/Student.png" alt="Student profile" class="student-img">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Hello! Check your profile details here.<br>
-                    You can view your courses, results, and personal information.
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <ul class="list-style">
-                        <li><a href="http://127.0.0.1:5500/Students/view_courses.html">
-                                  My Courses</li>
-                        </a>
-                           
-                        <li><a href="http://127.0.0.1:5500/Students/view_result.html">
-                                  View Results</li>
-                        </a>
-                           
-                        <li><a href="http://127.0.0.1:5500/Students/view_profile.html">
-                                 Profile</li>
-                        </a>
-                           
-                    </ul>
-                </td>
-            </tr>
-        </table>
+  <div class="student-card">
+    <h4 class="student-heading">Welcome</h4>
 
-        <hr style="margin-top: 10px; margin-bottom: 5px;">
-        <h4 style="text-align: center; margin-top: 0;">Student details</h4>
+    <img src="../Public_media/Student.png" alt="Student profile" class="student-img" />
 
-        <table border="2" align="center">
-            <tr>
-                <td><b>Name</b></td>
-                <td>Spandana</td>
-            </tr>
-            <tr>
-                
-                <td><b>Roll No</b></td>
-                <td><b>2400032836</b></td>
-            </tr>
-            <tr>
-                <td><b>Email</b></td>
-                <td>Spandana@gmail.com</td>
-            </tr>
-            <tr>
-                <td><b>Batch</b></td>
-                <td>2024</td>
-            </tr>
-        </table>
-    </div>
+    <p style="text-align: center;">
+      Hello! Check your profile details here.<br />
+      You can view your courses, results, and personal information.
+    </p>
+
+    <ul class="list-style">
+      <li><a href="view_courses.html">My Courses</a></li>
+      <li><a href="view_result.html">View Results</a></li>
+      <li><a href="view_profile.html">Profile</a></li>
+    </ul>
+
+    <hr />
+    <h4 style="text-align: center; margin-top: 0;">Student details</h4>
+
+    <table class="student-details">
+      <tr>
+        <td>Name</td>
+        <td>Spandana</td>
+      </tr>
+      <tr>
+        <td>Roll No</td>
+        <td>2400032836</td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>Spandana@gmail.com</td>
+      </tr>
+      <tr>
+        <td>Batch</td>
+        <td>2024</td>
+      </tr>
+    </table>
+  </div>
 
 </body>
 </html>

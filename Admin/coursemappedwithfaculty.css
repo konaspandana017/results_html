@@ -1,7 +1,7 @@
  body {
   margin: 0;
   padding: 40px;
-  background: linear-gradient(to right, #a2af9b, #d3d9c4);
+  background: #EBD6FB;
   font-family: Arial, sans-serif;
 }
 
@@ -13,7 +13,7 @@
 
 .faculty-card {
   max-width: 900px;
-  background-color: #f3f3f3;
+  background-color: #A2AADB;
   margin: 0 auto;
   padding: 20px;
   border-radius: 20px;
@@ -84,14 +84,14 @@
 
 .grid-header {
   font-weight: bold;
-  background-color: #b0c3a5;
+  background-color: #2980b9;
   padding: 8px;
   border-radius: 5px;
   text-align: center;
 }
 
 .grid-item {
-  background-color: #e6e9d7;
+  background-color: #B2B0E8;
   padding: 8px;
   border-radius: 5px;
   text-align: center;
