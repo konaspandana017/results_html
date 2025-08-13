@@ -1,106 +1,86 @@
 body {
+  background-color: #f2e6ff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #D1D8BE;;
-  margin: 40px;
-  color: #2c3e50;
+  margin: 0;
+  padding: 20px;
+  color: #2c2c2c;
 }
 
 .page-title {
   text-align: center;
-  font-size: 2rem;
+  font-size: 32px;
   margin-bottom: 30px;
-  font-weight: bold;
 }
+
 
 .summary-cards {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
   margin-bottom: 40px;
 }
 
 .card {
-  padding: 20px 25px;
+  background-color: #d6eaf8;
   border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-  width: 260px;
+  padding: 20px;
+  width: 200px;
   text-align: center;
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .card h2 {
-  font-size: 1.2rem;
   margin-bottom: 10px;
-  color: #fff;
+  font-size: 20px;
 }
 
-.card .value {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #fff;
+.status {
+  font-weight: bold;
+  font-size: 18px;
 }
 
-.card-green {
-  background-color: #27ae60;
+.status.pass {
+  color: green;
 }
 
-.card-blue {
-  background-color: #2980b9;
-}
-
-.card-purple {
-  background-color: #8e44ad;
-}
-
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
-
-.chart-container {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
+.status.fail {
+  color: red;
 }
 
 .chart-title {
+  text-align: center;
   margin-bottom: 20px;
-  font-size: 1.3rem;
-  color: #2c3e50;
 }
 
-.bar-chart-wrapper {
+.chart {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: flex-end;
-  height: 250px;
-  background-color: #ecf0f1;
-  border-radius: 8px;
-}
-
-.bar-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
+  gap: 30px;
+  height: 200px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .bar {
-  width: 40px;
-  background-color: #2980b9;
-  border-radius: 5px 5px 0 0;
-  transition: background-color 0.3s ease;
-  min-height: 10px;
+  width: 60px;
+  background-color: #8eb6ff;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  border-radius: 6px 6px 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 5px;
+  transition: 0.3s ease;
 }
 
 .bar:hover {
-  background-color: #1c5980;
-}
-
-.bar-label {
-  margin-top: 8px;
-  font-weight: 600;
-  color: #34495e;
+  background-color: #5a95f5;
 }
