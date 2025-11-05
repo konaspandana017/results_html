@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Read Display</title>
+    <script>
+        function display(){
+            let textname=document.getElementById('textname').value;
+            document.getElementById('textdisplay').innerHTML=textname;
+        }
+    </script>
+</head>
+<body>
+    <h1>Text Read Demo</h1>
+    <input type="text" name="textname" id="textname" placeholder="textname"><br>
+    <button onclick=display()>submit</button><br>
+    <label id="textdisplay">demo</label>
+    
+</body>
+</html>

@@ -1,0 +1,132 @@
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #D1D8BE;
+  margin: 0;
+  padding: 40px;
+  color: #2c3e50;
+}
+
+h1 {
+  text-align: center;
+  background-color: #4587c8;
+  color: #ecf0f1;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.student-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #ecf0f1;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.student-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
+.student-img {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 5px solid #2980b9;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.student-heading {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.student-card td {
+  text-align: center;
+  font-size: 1rem;
+  padding-bottom: 15px;
+}
+
+.list-style {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.list-style li {
+  background-color: #b888cc;
+  color: #E1E9C9;
+  padding: 12px 20px;
+  border-radius: 10px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.list-style li:hover {
+  background-color: #7e5290;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.list-style li::before {
+  content: '✓';
+  position: absolute;
+  left: 1px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #79c69a;
+  color: #E1E9C9;
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.list-style a {
+  text-decoration: none;
+  color: #E1E9C9;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+table.student-details {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table.student-details td {
+  padding: 10px;
+  border: 1px solid #bdc3c7;
+  text-align: left;
+}
+
+table.student-details td:first-child {
+  font-weight: bold;
+  background-color: #dcdde1;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin-top: 20px;
+}
+```

@@ -1,0 +1,25 @@
+.custom-card {
+  box-shadow: 0 4px 24px rgba(76, 0, 130, 0.12);
+  border-radius: 18px;
+  background: #f8f6ff;
+  transition: box-shadow 0.2s;
+}
+
+.custom-card:hover {
+  box-shadow: 0 8px 32px rgba(76, 0, 130, 0.18);
+}
+
+.custom-card-title {
+  color: #4B0082;
+  font-weight: bold;
+}
+
+.custom-card-subtitle {
+  color: #7C6FC4;
+  font-size: 15px;
+}
+
+.custom-card-action {
+  color: #4B0082;
+  font-weight: 600;
+}

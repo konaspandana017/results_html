@@ -1,0 +1,47 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 40px;
+  background-color: #f9fafb;
+  color: #2c3e50;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.courses-table {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.courses-table th,
+.courses-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.courses-table th {
+  background-color: #2980b9;
+  color: white;
+  font-weight: 700;
+}
+
+.courses-table a {
+  color: #2980b9;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.courses-table a:hover {
+  text-decoration: underline;
+}

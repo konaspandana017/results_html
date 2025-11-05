@@ -1,0 +1,103 @@
+/* Reset and background */
+body {
+  margin: 0;
+  background-color: #f3f3f3;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Center the card */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Card styling */
+.card {
+  background: white;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 320px;
+}
+
+/* Circle icon */
+.circle {
+  background-color: #f25b3b;
+  color: white;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  border-radius: 50%;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0 auto 15px;
+}
+
+/* Title */
+h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Input box */
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+/* Input focus effect */
+input:focus {
+  border-color: #4b7bec;
+  box-shadow: 0 0 3px #4b7bec;
+}
+
+/* Paragraph */
+p {
+  color: #555;
+  font-size: 14px;
+}
+
+/* Button group */
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+/* Buttons */
+button {
+  width: 48%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Save button */
+.save {
+  background-color: #3b82f6;
+}
+
+.save:hover {
+  background-color: #2563eb;
+}
+
+/* Clear button */
+.clear {
+  background-color: #ef4444;
+}
+
+.clear:hover {
+  background-color: #dc2626;
+}

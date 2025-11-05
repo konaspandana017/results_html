@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>View Results</title>
+  <link rel="stylesheet" href="result.css" />
+</head>
+<body>
+  <h1 class="page-title">View Results</h1>
+
+  <form class="filter-form">
+    <div class="form-group">
+      <label for="ay">Academic Year</label>
+      <select id="ay" name="ay">
+        <option value="">Select Year</option>
+        <option value="2023-24">2023-24</option>
+        <option value="2024-25">2024-25</option>
+        <option value="2025-26">2025-26</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="semester">Semester</label>
+      <select id="semester" name="semester">
+        <option value="">Select Semester</option>
+        <option value="Odd">Odd Semester</option>
+        <option value="Even">Even Semester</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="course">Course</label>
+      <select id="course" name="course">
+        <option value="">Select Course</option>
+        <option value="AI&ML">AI&ML</option>
+        <option value="Mathematics">Mathematics</option>
+        <option value="Front End Development">Front End Development</option>
+        <option value="Operating System">Operating System</option>
+        <option value="Oops"> Oops</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn filter-btn">Apply Filters</button>
+  </form>
+
+  <table class="results-table">
+    <thead>
+      <tr>
+        <th>Course</th>
+        <th>Internal</th>
+        <th>External</th>
+        <th>Total</th>
+        <th>Credits</th>
+        <th>Grade</th>
+        <th>CGPA</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tfoot>
+  <tr>
+    <td colspan="6" style="text-align: right; font-weight: bold;">Total CGPA</td>
+    <td colspan="2" style="font-weight: bold; color: #2e7d32;">6.97</td>
+  </tr>
+</tfoot>
+
+      <tr>
+        <td>Front End Development</td>
+        <td>22</td>
+        <td>55</td>
+        <td>77</td>
+        <td>3</td>
+        <td>A</td>
+        <td>8.5</td>
+        <td>Pass</td>
+      </tr>
+      <tr>
+        <td>Mathematics</td>
+        <td>18</td>
+        <td>49</td>
+        <td>67</td>
+        <td>4</td>
+        <td>B+</td>
+        <td>7.6</td>
+        <td>Pass</td>
+      </tr>
+      <tr>
+        <td>AI&ML</td>
+        <td>12</td>
+        <td>28</td>
+        <td>40</td>
+        <td>3</td>
+        <td>D</td>
+        <td>5.2</td>
+        <td>Fail</td>
+      </tr>
+      <tr>
+        <td>Operating System</td>
+        <td>20</td>
+        <td>45</td>
+        <td>65</td>
+        <td>3</td>
+        <td>B</td>
+        <td>7.0</td>
+        <td>Pass</td>
+      </tr>
+      <tr>
+        <td>Oops</td>
+        <td>15</td>
+        <td>35</td>
+        <td>50</td>
+        <td>3</td>
+        <td>C+</td>
+        <td>6.0</td>
+        <td>Pass</td>
+      </tr>   
+    </tbody>
+  </table>
+</body>
+</html>

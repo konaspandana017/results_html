@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Calculation Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .form-container {
+            border: 2px solid #001f3f; /* dark navy outline */
+            border-radius: 10px;
+            padding: 20px;
+            background: #fff;
+            max-width: 1000px;
+            margin: auto;
+        }
+        .form-container .form-label {
+            font-weight: 500;
+        }
+        .btn-submit {
+            width: 100%;
+        }
+        .table-container {
+            max-width: 1000px;
+            margin: 30px auto 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h4 class="mb-4">Salary Calculation Entry Form</h4>
+    <form id="salaryForm">
+        <div class="row g-3">
+            <div class="col-md-3">
+                <label class="form-label">Employee ID</label>
+                <input type="text" class="form-control" id="empId" placeholder="Enter ID" required>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Employee Name</label>
+                <input type="text" class="form-control" id="empName" placeholder="Enter Name" required>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Department</label>
+                <select id="department" class="form-control" required>
+                    <option value="">Select Department</option>
+                    <option>HR</option>
+                    <option>Admin</option>
+                    <option>IT</option>
+                    <option>Finance</option>
+                    <option>Sales</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Pay Scale</label>
+                <select id="payScale" class="form-control" required>
+                    <option value="">Select Pay Scale</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Basic Pay</label>
+                <input type="number" class="form-control" id="basicPay" placeholder="Basic Pay" min="1" required>
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">DA %</label>
+                <input type="number" class="form-control" id="da" placeholder="DA %" step="0.01">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">HRA %</label>
+                <input type="number" class="form-control" id="hra" placeholder="HRA %" step="0.01">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Special Allowance</label>
+                <input type="number" class="form-control" id="special" placeholder="Special" step="0.01">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">PF %</label>
+                <input type="number" class="form-control" id="pf" placeholder="PF %" step="0.01">
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Professional Tax</label>
+                <input type="number" class="form-control" id="profTax" placeholder="Tax" step="0.01">
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <button type="submit" class="btn btn-primary btn-submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+<div class="table-container">
+    <input type="text" id="filterDept" class="form-control mb-3" placeholder="Filter by Department">
+    <table class="table table-bordered table-striped" id="salaryTable">
+        <thead class="table-dark">
+            <tr>
+                <th>Emp ID</th>
+                <th>Name</th>
+                <th>Dept</th>
+                <th>Scale</th>
+                <th>Basic</th>
+                <th>DA</th>
+                <th>HRA</th>
+                <th>Special</th>
+                <th>PF</th>
+                <th>ProfTax</th>
+                <th>Gross</th>
+                <th>Net</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<script>
+const defaultScales = {
+    "A": { DA: 12, HRA: 16, PF: 12, Special: 0, ProfTax: 200 },
+    "B": { DA: 10, HRA: 14, PF: 12, Special: 500, ProfTax: 200 },
+    "C": { DA: 8, HRA: 12, PF: 10, Special: 1000, ProfTax: 200 },
+    "D": { DA: 6, HRA: 10, PF: 10, Special: 1500, ProfTax: 200 }
+};
+
+let editingRow = null;
+
+// Prefill on pay scale change
+document.getElementById('payScale').addEventListener('change', () => {
+    const scale = document.getElementById('payScale').value;
+    if(scale && defaultScales[scale]) {
+        document.getElementById('da').value = defaultScales[scale].DA;
+        document.getElementById('hra').value = defaultScales[scale].HRA;
+        document.getElementById('pf').value = defaultScales[scale].PF;
+        document.getElementById('special').value = defaultScales[scale].Special;
+        document.getElementById('profTax').value = defaultScales[scale].ProfTax;
+    }
+});
+
+// New event listener: alert if Basic Pay > 100000
+document.getElementById('basicPay').addEventListener('input', (e) => {
+    const basic = parseFloat(e.target.value);
+    if(basic > 100000) {
+        alert("Basic Pay exceeds 100,000!");
+    }
+});
+
+// Form submit
+document.getElementById('salaryForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const empId = document.getElementById('empId').value.trim();
+    const empName = document.getElementById('empName').value.trim();
+    const department = document.getElementById('department').value;
+    const payScale = document.getElementById('payScale').value;
+    const basic = parseFloat(document.getElementById('basicPay').value);
+    const DA = parseFloat(document.getElementById('da').value);
+    const HRA = parseFloat(document.getElementById('hra').value);
+    const Special = parseFloat(document.getElementById('special').value);
+    const PF = parseFloat(document.getElementById('pf').value);
+    const ProfTax = parseFloat(document.getElementById('profTax').value);
+
+    const daAmount = basic * (DA/100);
+    const hraAmount = basic * (HRA/100);
+    const gross = basic + daAmount + hraAmount + Special;
+    const pfAmount = basic * (PF/100);
+    const deductions = pfAmount + ProfTax;
+    const netPay = gross - deductions;
+
+    const tableBody = document.querySelector('#salaryTable tbody');
+
+    if(editingRow){
+        editingRow.innerHTML = `
+            <td>${empId}</td>
+            <td>${empName}</td>
+            <td>${department}</td>
+            <td>${payScale}</td>
+            <td>${basic.toFixed(2)}</td>
+            <td>${daAmount.toFixed(2)}</td>
+            <td>${hraAmount.toFixed(2)}</td>
+            <td>${Special.toFixed(2)}</td>
+            <td>${pfAmount.toFixed(2)}</td>
+            <td>${ProfTax.toFixed(2)}</td>
+            <td>${gross.toFixed(2)}</td>
+            <td>${netPay.toFixed(2)}</td>
+            <td>
+                <button class="btn btn-warning btn-sm editBtn">Edit</button>
+                <button class="btn btn-danger btn-sm deleteBtn">Delete</button>
+            </td>`;
+        editingRow = null;
+    } else {
+        const newRow = tableBody.insertRow();
+        newRow.innerHTML = `
+            <td>${empId}</td>
+            <td>${empName}</td>
+            <td>${department}</td>
+            <td>${payScale}</td>
+            <td>${basic.toFixed(2)}</td>
+            <td>${daAmount.toFixed(2)}</td>
+            <td>${hraAmount.toFixed(2)}</td>
+            <td>${Special.toFixed(2)}</td>
+            <td>${pfAmount.toFixed(2)}</td>
+            <td>${ProfTax.toFixed(2)}</td>
+            <td>${gross.toFixed(2)}</td>
+            <td>${netPay.toFixed(2)}</td>
+            <td>
+                <button class="btn btn-warning btn-sm editBtn">Edit</button>
+                <button class="btn btn-danger btn-sm deleteBtn">Delete</button>
+            </td>`;
+    }
+
+    document.getElementById('salaryForm').reset();
+});
+
+// Edit & Delete buttons
+document.querySelector('#salaryTable tbody').addEventListener('click', (e) => {
+    if(e.target.classList.contains('editBtn')){
+        editingRow = e.target.closest('tr');
+        document.getElementById('empId').value = editingRow.cells[0].textContent;
+        document.getElementById('empName').value = editingRow.cells[1].textContent;
+        document.getElementById('department').value = editingRow.cells[2].textContent;
+        document.getElementById('payScale').value = editingRow.cells[3].textContent;
+        document.getElementById('basicPay').value = editingRow.cells[4].textContent;
+        document.getElementById('da').value = parseFloat(editingRow.cells[5].textContent);
+        document.getElementById('hra').value = parseFloat(editingRow.cells[6].textContent);
+        document.getElementById('special').value = parseFloat(editingRow.cells[7].textContent);
+        document.getElementById('pf').value = parseFloat(editingRow.cells[8].textContent);
+        document.getElementById('profTax').value = parseFloat(editingRow.cells[9].textContent);
+    }
+
+    if(e.target.classList.contains('deleteBtn')){
+        e.target.closest('tr').remove();
+    }
+});
+
+// Filter by department
+document.getElementById('filterDept').addEventListener('input', (e) => {
+    const filter = e.target.value.toLowerCase();
+    const rows = document.querySelectorAll('#salaryTable tbody tr');
+    rows.forEach(row => {
+        row.style.display = (!filter || row.cells[2].textContent.toLowerCase().includes(filter)) ? '' : 'none';
+    });
+});
+</script>
+
+</body>
+</html>

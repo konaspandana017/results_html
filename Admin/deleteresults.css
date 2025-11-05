@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  padding: 40px;
+  background:  #EBD6FB;
+  font-family: Arial, sans-serif;
+}
+
+.page-title {
+  text-align: center;
+  color: #2d2d2d;
+  margin-bottom: 30px;
+}
+
+.delete-form {
+  max-width: 450px;
+  margin: 0 auto;
+  background: #A2AADB;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(107, 11, 11, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: bold;
+  color:  #2d2d2d;
+}
+
+.form-group select,
+.form-group input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1.5px solid  #2196f3;
+  font-size: 1rem;
+  outline-color:  #2196f3;
+}
+
+.btn {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color:  #2196f3;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color:  #1f6690;
+}

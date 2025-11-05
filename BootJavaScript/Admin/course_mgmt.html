@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Course Management</title>
+  <link rel="stylesheet" href="coursemgmt.css" />
+</head>
+<body>
+  <h1 class="page-title">Course Management</h1>
+
+  <section class="course-list-section">
+    <h2>Courses List</h2>
+    <table class="course-table">
+      <thead>
+        <tr>
+          <th>CourseID</th>
+          <th>Code</th>
+          <th>Title</th>
+          <th>Credits</th>
+          <th>Department</th>
+          <th>Semester</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>CSE101</td>
+          <td>Intro to Programming</td>
+          <td>4</td>
+          <td>Computer Science</td>
+          <td>Odd</td>
+          <td>
+            <button class="btn edit-btn">Edit</button>
+            <button class="btn delete-btn">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>CSE205</td>
+          <td>Data Structures</td>
+          <td>3</td>
+          <td>Computer Science</td>
+          <td>Even</td>
+          <td>
+            <button class="btn edit-btn">Edit</button>
+            <button class="btn delete-btn">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="course-form-section">
+    <h2>Add / Update Course</h2>
+    <form class="course-form">
+      <div class="form-group">
+        <label for="code">Code*</label>
+        <input type="text" id="code" name="code" placeholder="Course Code" required />
+      </div>
+
+      <div class="form-group">
+        <label for="title">Title*</label>
+        <input type="text" id="title" name="title" placeholder="Course Title" required />
+      </div>
+
+      <div class="form-group full-width">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="3" placeholder="Course Description"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="credits">Credits*</label>
+        <input type="number" id="credits" name="credits" placeholder="Credits" required min="1" max="10" />
+      </div>
+
+      <div class="form-group">
+        <label for="department">Department*</label>
+        <select id="department" name="department" required>
+          <option value="">Select Department</option>
+          <option value="Computer Science">Computer Science</option>
+          <option value="Electrical">Electrical</option>
+          <option value="Mechanical">Mechanical</option>
+          <option value="Civil">Civil</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="semester">Semester*</label>
+        <select id="semester" name="semester" required>
+          <option value="">Select Semester</option>
+          <option value="Odd">Odd</option>
+          <option value="Even">Even</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="year">Year*</label>
+        <select id="year" name="year" required>
+          <option value="">Select Year</option>
+          <option value="1">1st Year</option>
+          <option value="2">2nd Year</option>
+          <option value="3">3rd Year</option>
+          <option value="4">4th Year</option>
+        </select>
+      </div>
+
+      <div class="form-actions full-width">
+        <button type="submit" class="btn add-btn">Add / Update</button>
+      </div>
+    </form>
+  </section>
+</body>
+</html>

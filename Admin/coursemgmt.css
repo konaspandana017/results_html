@@ -1,0 +1,152 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px;
+  background:  #EBD6FB;
+  color: #333;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: #34495e;
+}
+.card {
+  background-color: #A2AADB;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.course-list-section,
+.course-form-section {
+  background: #A2AADB;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+}
+
+.course-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 10px;
+}
+
+.course-table th,
+.course-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: center;
+}
+
+.course-table th {
+  background-color: #2980b9;
+  color: white;
+  font-weight: 600;
+}
+
+.btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.edit-btn {
+  background-color: #27ae60;
+  color: white;
+  margin-right: 6px;
+}
+
+.edit-btn:hover {
+  background-color: #1e8449;
+}
+
+.delete-btn {
+  background-color: #c0392b;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #922b21;
+}
+
+.course-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+.form-group.full-width {
+  flex-basis: 100%;
+}
+
+label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  padding: 10px 12px;
+  border: 1.5px solid #bdc3c7;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus,
+textarea:focus {
+  border-color: #2980b9;
+  outline: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.form-actions {
+  text-align: center;
+}
+
+.form-actions.full-width {
+  flex-basis: 100%;
+}
+
+.add-btn {
+  background-color: #2980b9;
+  color: white;
+  padding: 12px 40px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+  background-color: #687FE5;
+}

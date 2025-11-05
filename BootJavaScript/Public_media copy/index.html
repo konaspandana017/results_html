@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Analysis Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="d-flex justify-content-center mt-5">
+    <div class="card" style="width: 18rem;">
+      <img src="../Public_media/Admin.png" class="card-img-top" alt="Admin">
+      <div class="card-body">
+        <h5 class="card-title">Admin</h5>
+        <a href="#" class="btn btn-primary" onclick="confirmAdmin()">Go to Admin Dashboard</a>
+      </div>
+    </div>
+    <script>
+      function confirmAdmin() {
+        if (confirm("You are entering into Admin Dashboard.\nPress OK to continue or Cancel to go back.")) {
+          window.location.href = "http://127.0.0.1:5500/Admin/Admin_index.html";
+        }
+      }
+    </script>
+    <div class="card" style="width: 18rem;">
+      <img src="../Public_media/faculty .png" class="card-img-top" alt="Faculty">
+      <div class="card-body">
+        <h5 class="card-title">Faculty_index</h5>
+        <a href="#" class="btn btn-primary" onclick="confirmAdmin()">Go to Admin Dashboard</a>
+      </div>
+    </div>
+    <script>
+      function confirmAdmin() {
+        if (confirm("You are entering into Faculty Dashboard.\nPress OK to continue or Cancel to go back.")) {
+          window.location.href = "http://127.0.0.1:5500/Faculty/Faculty_index.html";
+        }
+      }
+    </script>
+    <div class="card" style="width: 18rem;">
+      <img src="../Public_media/Student.png" class="card-img-top" alt="Student">
+      <div class="card-body">
+        <h5 class="card-title">Student_index</h5>
+        <a href="#" class="btn btn-primary" onclick="confirmAdmin()">Go to Student Dashboard</a>
+      </div>
+    </div>
+    <script>
+      function confirmAdmin() {
+        if (confirm("You are entering into Student Dashboard.\nPress OK to continue or Cancel to go back.")) {
+          window.location.href = "http://127.0.0.1:5500/Students/Student_index.html";
+        }
+      }
+    </script>
+  </div>
+    
+    
+</body>
+</html>

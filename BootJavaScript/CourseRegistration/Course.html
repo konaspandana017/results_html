@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Registration</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="p-4">
+
+  <div class="container">
+    <h2 class="mb-4">Course Registration Form</h2>
+
+    <div class="card mb-4">
+      <div class="card-header">Student Details</div>
+      <div class="card-body">
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Full Name</label>
+            <input type="text" id="name" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Roll Number</label>
+            <input type="text" id="roll" class="form-control">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Email</label>
+            <input type="email" id="email" class="form-control">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Phone</label>
+            <input type="text" id="phone" class="form-control">
+          </div>
+        </div>
+       
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label class="form-label">Program</label>
+            <select id="program" class="form-select">
+              <option value="">Select Program</option>
+              <option value="B.Tech">B.Tech</option>
+              <option value="M.Tech">M.Tech</option>
+              <option value="MBA">MBA</option>
+              <option value="B.Sc">B.Sc</option>
+              <option value="M.Sc">M.Sc</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Semester</label>
+            <select id="semester" class="form-select">
+              <option value="">Select Semester</option>
+              <option value="1">1st</option>
+              <option value="2">2nd</option>
+              <option value="3">3rd</option>
+              <option value="4">4th</option>
+              <option value="5">5th</option>
+              <option value="6">6th</option>
+              <option value="7">7th</option>
+              <option value="8">8th</option>
+            </select>
+          </div>
+           <div class="row mb-3">
+          <div class="col-md-12">
+            <label class="form-label">Address</label>
+            <textarea id="address" class="form-control"></textarea>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <button class="btn btn-primary me-2" data-category="all">All</button>
+      <button class="btn btn-success me-2" data-category="core">Core</button>
+      <button class="btn btn-warning me-2" data-category="lab">Lab</button>
+      <button class="btn btn-info me-2" data-category="elective">Elective</button>
+    </div>
+
+    <div class="row" id="coursesContainer"></div>
+
+    <div class="mt-4 card">
+      <div class="card-header">Summary</div>
+      <div class="card-body">
+        <p id="summary">Total Registered Credits: 0</p>
+        <ul id="courseList" class="list-group"></ul>
+      </div>
+    </div>
+
+    <!-- Submit and Reset buttons -->
+    <div class="mt-4 text-center">
+      <button id="submitBtn" class="btn btn-success me-2">Submit</button>
+      <button id="resetBtn" class="btn btn-danger">Reset</button>
+    </div>
+  </div>
+
+  <script>
+    const courses = [
+      { name: "Data Structures", code: "24CS201", credits: 4, category: "core" },
+      { name: "Operating Systems Lab", code: "24CS251", credits: 2, category: "lab" },
+      { name: "Database Systems", code: "24CS301", credits: 3, category: "core" },
+      { name: "AI Elective", code: "24CS401", credits: 3, category: "elective" },
+      { name: "Networking Lab", code: "24CS351", credits: 2, category: "lab" },
+      { name: "Software Engineering", code: "24CS302", credits: 3, category: "core" },
+      { name: "Machine Learning", code: "24CS402", credits: 4, category: "elective" },
+      { name: "Cloud Computing", code: "24CS403", credits: 3, category: "elective" },
+      { name: "Compiler Design", code: "24CS304", credits: 3, category: "core" },
+      { name: "Digital Electronics Lab", code: "24EE201", credits: 2, category: "lab" },
+      { name: "Theory of Computation", code: "24CS305", credits: 3, category: "core" },
+      { name: "Cyber Security", code: "24CS404", credits: 3, category: "elective" }
+    ];
+
+    const container = document.getElementById("coursesContainer");
+    const summary = document.getElementById("summary");
+    const courseList = document.getElementById("courseList");
+    let registeredCredits = 0;
+    let registeredCourses = new Map();
+
+    function renderCourses(filter = "all") {
+      container.innerHTML = "";
+      const filteredCourses = filter === "all" ? courses : courses.filter(c => c.category === filter);
+
+      filteredCourses.forEach(course => {
+        const col = document.createElement("div");
+        col.className = "col-md-4 mb-3";
+        col.innerHTML = `
+          <div class="card h-100">
+            <div class="card-body">
+              <h5 class="card-title">${course.name}</h5>
+              <p class="card-text">Code: ${course.code}</p>
+              <p class="card-text">Credits: ${course.credits}</p>
+              <p class="card-text"><span class="badge bg-secondary">${course.category.toUpperCase()}</span></p>
+              <button class="btn btn-outline-primary register-btn">Register</button>
+            </div>
+          </div>
+        `;
+        container.appendChild(col);
+
+        const btn = col.querySelector(".register-btn");
+
+        if (registeredCourses.has(course.code)) {
+          btn.disabled = true;
+          btn.textContent = "Registered";
+        }
+
+        btn.addEventListener("click", () => {
+          if (!registeredCourses.has(course.code)) {
+            registeredCourses.set(course.code, course.name);
+            registeredCredits += course.credits;
+            summary.textContent = "Total Registered Credits: " + registeredCredits;
+            const li = document.createElement("li");
+            li.className = "list-group-item";
+            li.textContent = `${course.code} - ${course.name}`;
+            courseList.appendChild(li);
+            btn.disabled = true;
+            btn.textContent = "Registered";
+          }
+        });
+      });
+    }
+
+    renderCourses();
+
+    document.querySelectorAll("button[data-category]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        renderCourses(btn.getAttribute("data-category"));
+      });
+    });
+
+    // Submit button
+    document.getElementById("submitBtn").addEventListener("click", () => {
+      alert("Form Submitted Successfully!");
+    });
+
+    // Reset button
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      document.getElementById("name").value = "";
+      document.getElementById("roll").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("phone").value = "";
+      document.getElementById("program").value = "";
+      document.getElementById("semester").value = "";
+      document.getElementById("address").value = "";
+      registeredCredits = 0;
+      registeredCourses.clear();
+      summary.textContent = "Total Registered Credits: 0";
+      courseList.innerHTML = "";
+      renderCourses();
+    });
+  </script>
+</body>
+</html>

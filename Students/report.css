@@ -1,0 +1,86 @@
+body {
+  background-color: #f2e6ff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 20px;
+  color: #2c2c2c;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+
+.summary-cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.card {
+  background-color: #d6eaf8;
+  border-radius: 10px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.status {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.status.pass {
+  color: green;
+}
+
+.status.fail {
+  color: red;
+}
+
+.chart-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.chart {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 30px;
+  height: 200px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.bar {
+  width: 60px;
+  background-color: #8eb6ff;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  border-radius: 6px 6px 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 5px;
+  transition: 0.3s ease;
+}
+
+.bar:hover {
+  background-color: #5a95f5;
+}
